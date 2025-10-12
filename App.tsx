@@ -1,28 +1,22 @@
 /**
- * Sample React Native App
- * https://github.com/facebook/react-native
+ * Call of the Ocean - Interactive Story Game
+ * Discover the secrets that sleep beneath the waves
  *
  * @format
  */
 
-import { NewAppScreen } from '@react-native/new-app-screen';
-import { StatusBar, StyleSheet, useColorScheme, View } from 'react-native';
+import React from 'react';
+import { StatusBar } from 'react-native';
+import { Navigation } from './src/components/Navigation';
+import './src/utils/OnboardingDebug'; // Импорт для отладки онбординга
 
 function App() {
-  const isDarkMode = useColorScheme() === 'dark';
-
   return (
-    <View style={styles.container}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <NewAppScreen templateFileName="App.tsx" />
-    </View>
+    <>
+      <StatusBar barStyle="light-content" backgroundColor="#1e3a8a" />
+      <Navigation />
+    </>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
 
 export default App;

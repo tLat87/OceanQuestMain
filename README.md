@@ -1,97 +1,132 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Call of the Ocean 🌊
 
-# Getting Started
+**Discover the secrets that sleep beneath the waves.**
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+Dive into the mysterious depths of the ocean and uncover ancient legends, forgotten treasures, and the timeless wisdom of the sea. Every choice you make will shape your path — will you follow the calm current or face the storm?
 
-## Step 1: Start Metro
+## Features
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+- 🌊 **Immersive ocean-inspired visuals** with stunning underwater themes
+- 📚 **Three unique storylines** filled with mystery and discovery:
+  - **STORM SURVIVAL** - Navigate through treacherous storms
+  - **RESCUE DUTY** - Save lives in the deep ocean
+  - **AFTER THE STORM** - Explore secrets revealed by calm waters
+- 🎯 **Interactive choices** that shape your destiny
+- 🎨 **Semi-realistic art style** inspired by myth and adventure
+- 🎵 **Calming ambient soundtrack** that draws you into the deep
+- ⭐ **Save your favorite stories** and revisit them anytime
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+## Gameplay
 
-```sh
-# Using npm
-npm start
+Call of the Ocean is an interactive story game where players:
 
-# OR using Yarn
-yarn start
+1. **Choose a scenario** from three available storylines
+2. **Read immersive stories** with rich ocean-themed narratives
+3. **Make crucial decisions** by selecting between two options
+4. **Receive feedback** on their choices from the Sea King
+5. **Progress through questions** to complete each story
+6. **Save favorite stories** for later reading
+
+## Screenshots
+
+The app features:
+- 🏠 **Main Menu** with "START MISSION" button
+- 📖 **Scenario Selection** with three unique storylines
+- 🏝️ **Story Screen** featuring the lighthouse and narrative
+- ❓ **Question Screen** with two-choice decisions
+- 💭 **Feedback Screen** with Sea King's wisdom
+- ⭐ **Saved Stories** collection
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (>= 18)
+- React Native development environment
+- iOS Simulator or Android Emulator
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd CallOcean
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Start Metro bundler**
+   ```bash
+   npm start
+   ```
+
+4. **Run on iOS**
+   ```bash
+   npm run ios
+   ```
+
+5. **Run on Android**
+   ```bash
+   npm run android
+   ```
+
+## Project Structure
+
+```
+src/
+├── components/          # Reusable UI components
+│   └── Navigation.tsx   # Main navigation component
+├── screens/            # Screen components
+│   ├── MainMenuScreen.tsx
+│   ├── ScenarioSelectionScreen.tsx
+│   ├── StoryScreen.tsx
+│   ├── QuestionScreen.tsx
+│   ├── FeedbackScreen.tsx
+│   └── SavedStoriesScreen.tsx
+├── data/               # Game data and stories
+│   └── stories.ts      # Scenario and story definitions
+├── types/              # TypeScript type definitions
+│   └── index.ts        # Game state and story types
+└── utils/              # Utilities and helpers
+    ├── GameContext.tsx # Game state management
+    └── styles.ts       # Common styles and colors
 ```
 
-## Step 2: Build and run your app
+## Game Data
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+The app includes rich story content:
 
-### Android
+- **The Light Above the Abyss** - A lighthouse story about navigation and survival
+- **The Siren's Call** - A merfolk rescue mission
+- **The Sunken Treasure** - Post-storm exploration adventures
 
-```sh
-# Using npm
-npm run android
+Each story contains multiple questions with meaningful choices that affect the narrative outcome.
 
-# OR using Yarn
-yarn android
-```
+## Technologies Used
 
-### iOS
+- **React Native** - Cross-platform mobile development
+- **TypeScript** - Type-safe development
+- **React Navigation** - Screen navigation
+- **React Context** - State management
+- **Custom styling** - Ocean-themed UI design
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
+## Development
 
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
+### Adding New Stories
 
-```sh
-bundle install
-```
+1. Edit `src/data/stories.ts`
+2. Add new scenarios, stories, and questions
+3. Follow the existing TypeScript interfaces
 
-Then, and every time you update your native dependencies, run:
+### Customizing Styles
 
-```sh
-bundle exec pod install
-```
+1. Edit `src/utils/styles.ts`
+2. Modify colors, fonts, and layout styles
+3. Maintain the ocean theme consistency
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
+## The Sea is Calling. Will You Answer? 🌊
 
-```sh
-# Using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
-```
-
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
-
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
-
-## Step 3: Modify your app
-
-Now that you have successfully run the app, let's make changes!
-
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
-
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
-
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+Begin your journey now — listen to the Call of the Ocean.

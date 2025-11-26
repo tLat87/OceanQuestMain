@@ -8,10 +8,10 @@ workflows:
         environment:
           ios_signing:
             distribution_type: app_store
-            bundle_identifier: com.yamlCallOcean.main
+            bundle_identifier: com.calloceanapp.main
           vars:
             APP_STORE_APPLE_ID: 6753932067
-            BUNDLE_ID: "com.yamlCallOcean.main"
+            BUNDLE_ID: "com.calloceanapp.main"
             XCODE_WORKSPACE: "CallOcean.xcworkspace"
             XCODE_SCHEME: "CallOcean"
         scripts:

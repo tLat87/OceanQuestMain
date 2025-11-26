@@ -1,10 +1,10 @@
 import React from 'react';
 import { View, Text, ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
-import { commonStyles, colors } from '../utils/styles';
-import { OceanBackground } from '../components/OceanBackground';
-import { GradientBackButton } from '../components/GradientBackButton';
-import { GradientNavButton } from '../components/GradientNavButton';
-import { Story } from '../types';
+import { commonStyles, colors } from '../callocean-utils/styles';
+import { OceanBackground } from '../callocean-components/OceanBackground';
+import { GradientBackButton } from '../callocean-components/GradientBackButton';
+import { GradientNavButton } from '../callocean-components/GradientNavButton';
+import { Story } from '../callocean-types';
 
 interface SavedStoriesScreenProps {
   savedStories: Story[];
@@ -50,9 +50,9 @@ export const SavedStoriesScreen: React.FC<SavedStoriesScreenProps> = ({
 
       {/* Bottom navigation */}
       <View style={commonStyles.bottomNavigation}>
-        <GradientNavButton image={require('../assets/img/Group.png')} onPress={() => {}} />
-        <GradientNavButton image={require('../assets/img/Star 1.png')} onPress={() => {}} />
-        <GradientNavButton image={require('../assets/img/BTN.png')} onPress={() => {}} />
+        <GradientNavButton image={require('../callocean-assets/img/Group.png')} onPress={() => {}} />
+        <GradientNavButton image={require('../callocean-assets/img/Star 1.png')} onPress={() => {}} />
+        <GradientNavButton image={require('../callocean-assets/img/BTN.png')} onPress={() => {}} />
       </View>
     </OceanBackground>
   );

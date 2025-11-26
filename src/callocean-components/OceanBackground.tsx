@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, ImageBackground, StyleSheet, ViewStyle } from 'react-native';
-import { colors } from '../utils/styles';
+import { colors } from '../callocean-utils/styles';
 
 interface OceanBackgroundProps {
   children: React.ReactNode;
@@ -11,7 +11,7 @@ export const OceanBackground: React.FC<OceanBackgroundProps> = ({ children, styl
   return (
     <View style={[styles.container, style]}>
       <ImageBackground
-        source={require('../assets/img/06edd5f952da0d9673fdfe9c5913e46c7e35a728.png')}
+        source={require('../callocean-assets/img/06edd5f952da0d9673fdfe9c5913e46c7e35a728.png')}
         style={styles.backgroundImage}
         resizeMode="cover"
       >

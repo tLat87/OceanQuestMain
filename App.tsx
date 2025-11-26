@@ -1,14 +1,14 @@
 /**
- * Call of the Ocean - Interactive Story Game
- * Discover the secrets that sleep beneath the waves
+ * OceanQuest - Treasure Hunt Adventure
+ * Embark on an epic quest to find legendary treasures hidden in the depths
  *
  * @format
  */
 
 import React from 'react';
 import { StatusBar } from 'react-native';
-import { Navigation } from './src/components/Navigation';
-import './src/utils/OnboardingDebug'; // Импорт для отладки онбординга
+import { Navigation } from './src/callocean-components/Navigation';
+import './src/callocean-utils/OnboardingDebug'; // Импорт для отладки онбординга
 
 function App() {
   return (

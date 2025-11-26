@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
-import { OceanBackground } from '../components/OceanBackground';
-import { commonStyles, colors } from '../utils/styles';
+import { OceanBackground } from '../callocean-components/OceanBackground';
+import { commonStyles, colors } from '../callocean-utils/styles';
 
 interface OnboardingScreen2Props {
   onStart: () => void;
@@ -12,7 +12,7 @@ export const OnboardingScreen2: React.FC<OnboardingScreen2Props> = ({ onStart })
     <OceanBackground>
       {/* Game Logo */}
       <View style={styles.logoContainer}>
-        <Image source={require('../assets/img/39927c36b4a6ef5b42b8c61baa92ba5661f59d35.png')} style={{width: 300, height: 200, alignSelf: 'center'}} />
+        <Image source={require('../callocean-assets/img/39927c36b4a6ef5b42b8c61baa92ba5661f59d35.png')} style={{width: 300, height: 200, alignSelf: 'center'}} />
       </View>
 
       {/* Main content */}
@@ -26,7 +26,7 @@ export const OnboardingScreen2: React.FC<OnboardingScreen2Props> = ({ onStart })
         </View>
 
         {/* Character area */}
-        <Image source={require('../assets/img/846d80425b8da3bbbd1a55e0f69987bc2474a7e7.png')} style={{width: 300, height: 450, position: 'absolute', bottom: -150, alignSelf: 'center'}} />
+        <Image source={require('../callocean-assets/img/846d80425b8da3bbbd1a55e0f69987bc2474a7e7.png')} style={{width: 300, height: 450, position: 'absolute', bottom: -150, alignSelf: 'center'}} />
       </View>
 
       {/* Start button */}

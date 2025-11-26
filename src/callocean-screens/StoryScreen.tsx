@@ -1,64 +1,49 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { View, Text, ScrollView, StyleSheet, Image, TouchableOpacity } from 'react-native';
-import { commonStyles, colors } from '../utils/styles';
-import { OceanBackground } from '../components/OceanBackground';
-import { GradientBackButton } from '../components/GradientBackButton';
-import { ActionButton } from '../components/ActionButton';
-import { Story } from '../types';
+import { commonStyles, colors } from '../callocean-utils/styles';
+import { OceanBackground } from '../callocean-components/OceanBackground';
+import { GradientButton } from '../callocean-components/GradientButton';
+import { GradientBackButton } from '../callocean-components/GradientBackButton';
+import { ActionButton } from '../callocean-components/ActionButton';
+import { Story } from '../callocean-types';
 
-interface StoriesScreenProps {
-  stories: Story[];
+interface StoryScreenProps {
+  story: Story;
   onBack: () => void;
-  onViewStory: (storyId: string) => void;
-  onSaveStory: (storyId: string) => void;
-  onShareStory: (storyId: string) => void;
-  savedStories: string[];
+  onStartStory?: () => void;
+  onSaveStory: () => void;
+  isSaved: boolean;
+  onShare?: () => void;
+  onNext?: () => void;
 }
 
-export const StoriesScreen: React.FC<StoriesScreenProps> = ({
-  stories,
+export const StoryScreen: React.FC<StoryScreenProps> = ({
+  story,
   onBack,
-  onViewStory,
+  onStartStory,
   onSaveStory,
-  onShareStory,
-  savedStories,
+  isSaved,
+  onShare,
+  onNext,
 }) => {
-  const [currentStoryIndex, setCurrentStoryIndex] = useState(0);
-  const currentStory = stories[currentStoryIndex];
-
   const getStoryImage = (imageName: string) => {
     switch (imageName) {
       case '1':
-        return require('../assets/img/1.png');
+        return require('../callocean-assets/img/1.png');
       case '2':
-        return require('../assets/img/2.png');
+        return require('../callocean-assets/img/2.png');
       case '3':
-        return require('../assets/img/3.png');
+        return require('../callocean-assets/img/3.png');
       case '4':
-        return require('../assets/img/4.png');
+        return require('../callocean-assets/img/4.png');
       case '5':
-        return require('../assets/img/5.png');
+        return require('../callocean-assets/img/5.png');
       case '6':
-        return require('../assets/img/6.png');
+        return require('../callocean-assets/img/6.png');
       default:
-        return require('../assets/img/1.png');
+        return require('../callocean-assets/img/1.png');
     }
   };
-
-  const handleNext = () => {
-    if (currentStoryIndex < stories.length - 1) {
-      setCurrentStoryIndex(currentStoryIndex + 1);
-    }
-  };
-
-  const handlePrevious = () => {
-    if (currentStoryIndex > 0) {
-      setCurrentStoryIndex(currentStoryIndex - 1);
-    }
-  };
-
-  const isStorySaved = (storyId: string) => savedStories.includes(storyId);
-
   return (
     <OceanBackground>
       {/* Header */}
@@ -74,34 +59,25 @@ export const StoriesScreen: React.FC<StoriesScreenProps> = ({
           {/* Story image */}
           <View style={styles.imageContainer}>
             <Image 
-              source={getStoryImage(currentStory?.image || '1')} 
+              source={getStoryImage(story.image)} 
               style={styles.storyImage}
               resizeMode="cover"
             />
           </View>
           
           {/* Story title */}
-          <Text style={styles.storyTitle}>{currentStory?.title}</Text>
+          <Text style={styles.storyTitle}>{story.title}</Text>
           
           {/* Story description */}
-          <Text style={styles.storyDescription}>{currentStory?.description}</Text>
+          <Text style={styles.storyDescription}>{story.description}</Text>
         </View>
       </View>
 
       {/* Action buttons */}
       <View style={styles.actionButtons}>
-        {/* <ActionButton 
-          icon="⋯" 
-          onPress={() => onShareStory(currentStory?.id || '')} 
-        /> */}
-        <ActionButton 
-          icon={isStorySaved(currentStory?.id || '') ? "★" : "☆"} 
-          onPress={() => onSaveStory(currentStory?.id || '')} 
-        />
-        <ActionButton 
-          icon="→" 
-          onPress={handleNext} 
-        />
+        {/* <ActionButton icon="⋯" onPress={onShare || (() => {})} /> */}
+        <ActionButton icon={isSaved ? "★" : "☆"} onPress={onSaveStory} />
+        <ActionButton icon="→" onPress={onNext || (() => {})} />
       </View>
     </OceanBackground>
   );
@@ -177,7 +153,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     paddingHorizontal: 20,
-    paddingBottom: 0,
+    paddingBottom: 40,
     gap: 20,
   },
 });

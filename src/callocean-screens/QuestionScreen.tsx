@@ -1,13 +1,13 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
-import { commonStyles, colors } from '../utils/styles';
-import { OceanBackground } from '../components/OceanBackground';
-import { GradientButton } from '../components/GradientButton';
-import { GradientBackButton } from '../components/GradientBackButton';
-import { Question } from '../types';
+import { View, Text, StyleSheet } from 'react-native';
+import { colors } from '../callocean-utils/styles';
+import { OceanBackground } from '../callocean-components/OceanBackground';
+import { GradientButton } from '../callocean-components/GradientButton';
+import { GradientBackButton } from '../callocean-components/GradientBackButton';
+import { ScenarioQuestion } from '../callocean-types';
 
 interface QuestionScreenProps {
-  question: Question;
+  question: ScenarioQuestion;
   questionNumber: number;
   totalQuestions: number;
   scenarioTitle?: string;
@@ -43,19 +43,18 @@ export const QuestionScreen: React.FC<QuestionScreenProps> = ({
 
         {/* Options */}
         <View style={styles.optionsContainer}>
-          <GradientButton
-            title={question.options[0].text}
-            onPress={() => onSelectAnswer(question.options[0].id)}
-            style={styles.optionButton}
-          />
-
-          <Text style={styles.orText}>or</Text>
-
-          <GradientButton
-            title={question.options[1].text}
-            onPress={() => onSelectAnswer(question.options[1].id)}
-            style={styles.optionButton}
-          />
+          {question.options.map((option, index) => (
+            <React.Fragment key={option.id}>
+              <GradientButton
+                title={option.text}
+                onPress={() => onSelectAnswer(option.id)}
+                style={styles.optionButton}
+              />
+              {index < question.options.length - 1 && (
+                <Text style={styles.orText}>or</Text>
+              )}
+            </React.Fragment>
+          ))}
         </View>
       </View>
     </OceanBackground>

@@ -1,8 +1,8 @@
 import React from 'react';
 import { View, Text, ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
-import { OceanBackground } from '../components/OceanBackground';
-import { GradientBackButton } from '../components/GradientBackButton';
-import { commonStyles, colors } from '../utils/styles';
+import { OceanBackground } from '../callocean-components/OceanBackground';
+import { GradientBackButton } from '../callocean-components/GradientBackButton';
+import { commonStyles, colors } from '../callocean-utils/styles';
 
 interface StoriesHelpScreenProps {
   onBack: () => void;

@@ -1,10 +1,10 @@
 import React from 'react';
 import { View, Text, ScrollView, StyleSheet, TouchableOpacity, Image } from 'react-native';
-import { commonStyles, colors } from '../utils/styles';
-import { OceanBackground } from '../components/OceanBackground';
-import { GradientButton } from '../components/GradientButton';
-import { GradientBackButton } from '../components/GradientBackButton';
-import { Scenario } from '../types';
+import { commonStyles, colors } from '../callocean-utils/styles';
+import { OceanBackground } from '../callocean-components/OceanBackground';
+import { GradientButton } from '../callocean-components/GradientButton';
+import { GradientBackButton } from '../callocean-components/GradientBackButton';
+import { Scenario } from '../callocean-types';
 
 interface ScenarioSelectionScreenProps {
   scenarios: Scenario[];
@@ -37,7 +37,7 @@ export const ScenarioSelectionScreen: React.FC<ScenarioSelectionScreenProps> = (
         ))}
       </ScrollView>
 
-      <Image source={require('../assets/img/846d80425b8da3bbbd1a55e0f69987bc2474a7e7.png')} style={{width: 300, height: 450, position: 'absolute', bottom: 0, alignSelf: 'center'}} />
+      <Image source={require('../callocean-assets/img/846d80425b8da3bbbd1a55e0f69987bc2474a7e7.png')} style={{width: 300, height: 450, position: 'absolute', bottom: 0, alignSelf: 'center'}} />
     </OceanBackground>
   );
 };

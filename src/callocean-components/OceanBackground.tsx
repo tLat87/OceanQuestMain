@@ -1,13 +1,27 @@
 import React from 'react';
-import { View, ImageBackground, StyleSheet, ViewStyle } from 'react-native';
+import {
+  View,
+  ImageBackground,
+  StyleSheet,
+  ViewStyle,
+  ScrollView,
+  ViewProps,
+} from 'react-native';
 import { colors } from '../callocean-utils/styles';
 
 interface OceanBackgroundProps {
   children: React.ReactNode;
   style?: ViewStyle;
+  contentContainerStyle?: ViewStyle;
+  showsVerticalScrollIndicator?: boolean;
 }
 
-export const OceanBackground: React.FC<OceanBackgroundProps> = ({ children, style }) => {
+export const OceanBackground: React.FC<OceanBackgroundProps> = ({
+  children,
+  style,
+  contentContainerStyle,
+  showsVerticalScrollIndicator = false,
+}) => {
   return (
     <View style={[styles.container, style]}>
       <ImageBackground
@@ -15,10 +29,13 @@ export const OceanBackground: React.FC<OceanBackgroundProps> = ({ children, styl
         style={styles.backgroundImage}
         resizeMode="cover"
       >
-        {/* Content with top and bottom padding */}
-        <View style={styles.content}>
+        <ScrollView
+          contentContainerStyle={[styles.content, contentContainerStyle]}
+          bounces={false}
+          showsVerticalScrollIndicator={showsVerticalScrollIndicator}
+        >
           {children}
-        </View>
+        </ScrollView>
       </ImageBackground>
     </View>
   );
@@ -34,8 +51,8 @@ const styles = StyleSheet.create({
     height: '100%',
   },
   content: {
-    flex: 1,
-    paddingTop: 60, // Top padding
-    paddingBottom: 60, // Bottom padding
+    flexGrow: 1,
+    paddingTop: 60,
+    paddingBottom: 60,
   },
 });

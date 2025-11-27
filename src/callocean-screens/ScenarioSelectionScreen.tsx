@@ -35,9 +35,14 @@ export const ScenarioSelectionScreen: React.FC<ScenarioSelectionScreenProps> = (
             style={styles.scenarioButton}
           />
         ))}
+        <View style={styles.characterContainer}>
+          <Image
+            source={require('../callocean-assets/img/846d80425b8da3bbbd1a55e0f69987bc2474a7e7.png')}
+            style={styles.characterImage}
+            resizeMode="contain"
+          />
+        </View>
       </ScrollView>
-
-      <Image source={require('../callocean-assets/img/846d80425b8da3bbbd1a55e0f69987bc2474a7e7.png')} style={{width: 300, height: 450, position: 'absolute', bottom: 0, alignSelf: 'center'}} />
     </OceanBackground>
   );
 };
@@ -71,5 +76,15 @@ const styles = StyleSheet.create({
   scenarioButton: {
     marginBottom: 15,
     minWidth: 250,
+  },
+  characterContainer: {
+    alignItems: 'center',
+    marginTop: 30,
+    marginBottom: 10,
+  },
+  characterImage: {
+    width: '70%',
+    maxWidth: 380,
+    aspectRatio: 0.66,
   },
 });

@@ -28,7 +28,11 @@ export const MainMenuScreen: React.FC<MainMenuScreenProps> = ({
      
       {/* Main content */}
       <View style={styles.mainContent}>
-        <Image source={require('../callocean-assets/img/39927c36b4a6ef5b42b8c61baa92ba5661f59d35.png')} style={{width: 300, height: 200, alignSelf: 'center'}} />
+        <Image
+          source={require('../callocean-assets/img/39927c36b4a6ef5b42b8c61baa92ba5661f59d35.png')}
+          style={styles.heroImage}
+          resizeMode="contain"
+        />
 
         {/* Main buttons */}
         <View style={styles.buttonContainer}>
@@ -71,6 +75,13 @@ const styles = StyleSheet.create({
   mainContent: {
     flex: 1,
     justifyContent: 'center',
+  },
+  heroImage: {
+    width: '80%',
+    maxWidth: 420,
+    aspectRatio: 1.5,
+    alignSelf: 'center',
+    marginVertical: 20,
   },
   subtitle: {
     fontSize: 22,

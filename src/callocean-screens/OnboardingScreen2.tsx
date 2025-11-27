@@ -12,7 +12,11 @@ export const OnboardingScreen2: React.FC<OnboardingScreen2Props> = ({ onStart })
     <OceanBackground>
       {/* Game Logo */}
       <View style={styles.logoContainer}>
-        <Image source={require('../callocean-assets/img/39927c36b4a6ef5b42b8c61baa92ba5661f59d35.png')} style={{width: 300, height: 200, alignSelf: 'center'}} />
+        <Image
+          source={require('../callocean-assets/img/39927c36b4a6ef5b42b8c61baa92ba5661f59d35.png')}
+          style={styles.logoImage}
+          resizeMode="contain"
+        />
       </View>
 
       {/* Main content */}
@@ -26,7 +30,11 @@ export const OnboardingScreen2: React.FC<OnboardingScreen2Props> = ({ onStart })
         </View>
 
         {/* Character area */}
-        <Image source={require('../callocean-assets/img/846d80425b8da3bbbd1a55e0f69987bc2474a7e7.png')} style={{width: 300, height: 450, position: 'absolute', bottom: -150, alignSelf: 'center'}} />
+        <Image
+          source={require('../callocean-assets/img/846d80425b8da3bbbd1a55e0f69987bc2474a7e7.png')}
+          style={styles.characterImage}
+          resizeMode="contain"
+        />
       </View>
 
       {/* Start button */}
@@ -44,6 +52,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingTop: 40,
     paddingBottom: 20,
+  },
+  logoImage: {
+    width: '75%',
+    maxWidth: 420,
+    aspectRatio: 1.5,
   },
   goldenFrame: {
     borderWidth: 3,
@@ -71,11 +84,11 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    paddingHorizontal: 40,
+    paddingHorizontal: 24,
   },
   textContainer: {
     alignItems: 'center',
-    marginBottom: 260,
+    marginBottom: 20,
   },
   mainText: {
     fontSize: 28,
@@ -87,22 +100,11 @@ const styles = StyleSheet.create({
     textShadowOffset: { width: 2, height: 2 },
     textShadowRadius: 4,
   },
-  characterArea: {
-    alignItems: 'center',
-    backgroundColor: 'rgba(0, 0, 0, 0.3)',
-    paddingVertical: 30,
-    paddingHorizontal: 40,
-    borderRadius: 20,
-  },
-  characterEmoji: {
-    fontSize: 80,
-    marginBottom: 15,
-  },
-  characterText: {
-    fontSize: 16,
-    color: colors.yellow,
-    textAlign: 'center',
-    fontStyle: 'italic',
+  characterImage: {
+    width: '70%',
+    maxWidth: 380,
+    aspectRatio: 0.66,
+    marginTop: 30,
   },
   buttonContainer: {
     alignItems: 'center',

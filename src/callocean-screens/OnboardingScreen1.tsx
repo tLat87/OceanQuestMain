@@ -13,7 +13,11 @@ export const OnboardingScreen1: React.FC<OnboardingScreen1Props> = ({ onNext }) 
       {/* Main content */}
       <View style={styles.content}>
         {/* Title */}
-        <Image source={require('../callocean-assets/img/39927c36b4a6ef5b42b8c61baa92ba5661f59d35.png')} style={{width: 300, height: 200, alignSelf: 'center'}} />
+        <Image
+          source={require('../callocean-assets/img/39927c36b4a6ef5b42b8c61baa92ba5661f59d35.png')}
+          style={styles.heroImage}
+          resizeMode="contain"
+        />
         {/* Welcome message */}
         <View style={styles.welcomeContainer}>
           <Text style={styles.welcomeTitle}>Welcome to the Deep</Text>
@@ -24,8 +28,12 @@ export const OnboardingScreen1: React.FC<OnboardingScreen1Props> = ({ onNext }) 
 
         {/* Character illustration */}
         <View style={styles.characterArea}>
+          <Image
+            source={require('../callocean-assets/img/846d80425b8da3bbbd1a55e0f69987bc2474a7e7.png')}
+            style={styles.characterImage}
+            resizeMode="contain"
+          />
         </View>
-        <Image source={require('../callocean-assets/img/846d80425b8da3bbbd1a55e0f69987bc2474a7e7.png')} style={{width: 300, height: 450, position: 'absolute', bottom: -100, alignSelf: 'center'}} />
         {/* Next button */}
         <View style={styles.buttonContainer}>
           <TouchableOpacity style={styles.nextButton} onPress={onNext}>
@@ -41,6 +49,13 @@ const styles = StyleSheet.create({
   content: {
     flex: 1,
     paddingHorizontal: 20,
+  },
+  heroImage: {
+    width: '80%',
+    maxWidth: 420,
+    aspectRatio: 1.5,
+    alignSelf: 'center',
+    marginBottom: 20,
   },
   welcomeContainer: {
     backgroundColor: 'rgba(255, 255, 255, 0.1)',
@@ -65,21 +80,12 @@ const styles = StyleSheet.create({
   },
   characterArea: {
     alignItems: 'center',
-    marginVertical: 100,
-    paddingVertical: 20,
-    // backgroundColor: 'rgba(0, 0, 0, 0.3)',
-    borderRadius: 15,
+    marginVertical: 40,
   },
-  characterEmoji: {
-    fontSize: 80,
-    marginBottom: 15,
-  },
-  characterText: {
-    fontSize: 16,
-    color: colors.yellow,
-    textAlign: 'center',
-    fontStyle: 'italic',
-    paddingHorizontal: 20,
+  characterImage: {
+    width: '70%',
+    maxWidth: 360,
+    aspectRatio: 0.66,
   },
   buttonContainer: {
     alignItems: 'center',
